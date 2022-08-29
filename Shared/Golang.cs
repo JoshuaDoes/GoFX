@@ -1,0 +1,29 @@
+using System;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+
+public class Golang
+{
+    public struct GoSlice
+    {
+        public IntPtr data;
+        public long len, cap;
+        public GoSlice(IntPtr data, long len, long cap)
+        {
+            this.data = data;
+            this.len = len;
+            this.cap = cap;
+        }
+    }
+
+    public struct GoString
+    {
+        public string msg;
+        public long len;
+        public GoString(string msg, long len)
+        {
+            this.msg = msg;
+            this.len = len;
+        }
+    }
+}
