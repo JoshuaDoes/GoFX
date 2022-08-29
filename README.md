@@ -19,3 +19,12 @@ To edit the GoFX loader's C code, open the `go\src\gofx` folder.
 To build GoFX and the test Go resource, run `build.cmd`.
 
 Afterwards, you can use `ensure gofx` in your server.cfg to start the resource automatically each time the server starts. If your server is already started, you can use `start gofx` to start the resource manually.
+
+## Detailed folder structure:
+- Shared contains the bindings for the GoFX loader as well as the Go resource handler and associated types
+- Client does nothing yet, but will mimic Server once working
+- Server contains an attempt to load and initialize all available Go server resources using the GoFX loader
+- go/src/client contains the test Go client resource
+- go/src/server contains the test Go server resource (works with GoFX test client)
+- go/src/gofx contains the actual GoFX loader in C, a GoFX test client in C, and a test Go resource that should work under the GoFX test client
+- go/src/gofx/core will later contain a package for C#-Go interop, such as event handling and all the types expected from C#-side code
